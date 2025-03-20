@@ -2,11 +2,11 @@
   "short_name": "",
   "name": "",
   "icons": [{
-    "src": "icon.png",
-    "type": "image/png",
+    "src": "./img/logo.svg",
+    "type": "image/svg",
     "sizes": "192x192"
   }],
-  "start_url": "/?utm_source=homescreen",
-  "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "start_url": "/",
+  "background_color": "#2d5d7b",
+  "theme_color": "#739e82"
 }
