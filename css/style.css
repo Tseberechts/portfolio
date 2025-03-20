@@ -952,10 +952,14 @@ header h2 {
 .logo a {
   font-family: var(--font-mono);
   color: var(--color-cloud-white);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
-  padding: 8px 12px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid var(--color-amber-spice);
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -1278,10 +1282,14 @@ header {
 
 .logo-text {
   font-family: var(--font-mono);
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--color-cloud-white);
-  padding: 10px 15px;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid var(--color-amber-spice);
   border-radius: 8px;
   margin-bottom: 15px;
