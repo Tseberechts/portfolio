@@ -1,10 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
 
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+
+    menuToggle.addEventListener('touchend', () => {
       menuToggle.classList.toggle('active');
       navLinks.classList.toggle('active');
       document.body.classList.toggle('menu-open');
@@ -13,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close menu when a link is clicked
     const links = navLinks.querySelectorAll('a');
     links.forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
         navLinks.classList.remove('active');
         document.body.classList.remove('menu-open');
@@ -21,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Scroll to sections smoothly when clicking nav links
+  // Smooth scroll functionality
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', e => {
       e.preventDefault();
-      const targetId = this.getAttribute('href');
+      const targetId = anchor.getAttribute('href');
       if (targetId === '#') return;
 
       const targetElement = document.querySelector(targetId);
@@ -41,9 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Change navbar background on scroll
+  // Navbar transition on scroll
   const mainNav = document.querySelector('.main-nav');
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       mainNav.classList.add('scrolled');
     } else {
