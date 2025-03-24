@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('loaded');
   // Mobile menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
 
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      console.log('clicked');
       menuToggle.classList.toggle('active');
       navLinks.classList.toggle('active');
       document.body.classList.toggle('menu-open');
@@ -51,11 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const testSpan = document.getElementById('test');
-  testSpan.innerText = 'test';
-  if (testSpan) {
-    testSpan.addEventListener('click', () => {
-      alert('Test span clicked!');
-    });
+  // fill year span
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
   }
 });
