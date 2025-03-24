@@ -10,12 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('menu-open');
     });
 
-    menuToggle.addEventListener('touchend', () => {
-      menuToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
-    });
-
     // Close menu when a link is clicked
     const links = navLinks.querySelectorAll('a');
     links.forEach(link => {
@@ -37,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         const navHeight = document.querySelector('.main-nav').offsetHeight;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
 
         window.scrollTo({
           top: targetPosition,
@@ -56,4 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
       mainNav.classList.remove('scrolled');
     }
   });
+
+  const testSpan = document.getElementById('test');
+  testSpan.innerText = 'test';
+  if (testSpan) {
+    testSpan.addEventListener('click', () => {
+      alert('Test span clicked!');
+    });
+  }
 });
